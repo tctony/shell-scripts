@@ -1,3 +1,3 @@
-[submodule "sync-git"]
-	path = sync-git
+[submodule "sync_git"]
+	path = sync_git
 	url = git@github.com:tctony/git-sync.git
