@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 # Sync git ( release branch) to svn (master branch)
 
 # last synced commit

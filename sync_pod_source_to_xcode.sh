@@ -1,3 +1,4 @@
+#!/bin/sh
 # sync_pod_source_to_xcode.sh '/path/to/lib/source_dir' '/path/to/project/Pods/lib'
 
 if [ $# != 2 ]; then

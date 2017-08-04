@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 CONFIG_DIR=$HOME/Emacs
 

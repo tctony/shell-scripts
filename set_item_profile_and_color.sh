@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 # This script will change your iterm tab color and the background for that tab.
 

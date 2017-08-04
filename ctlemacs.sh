@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 _get_pid () {
     cat /var/run/emacs.pid 2>/dev/null 
