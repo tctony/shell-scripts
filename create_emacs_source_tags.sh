@@ -1,5 +1,5 @@
 #!/bin/sh
-# generate gtags in .tags/emacs-lisp for lisp sources contained in emacs
+# generate gtags in .gtags/emacs-lisp for lisp sources contained in emacs
 
 if [ $# == 0 ]; then
     echo "Usage: create_emacs_tags.sh source_dir"
@@ -8,7 +8,7 @@ if [ $# == 0 ]; then
 fi
 
 SOURCE_DIR=$1
-TAG_DIR=~/.tags/emacs-lisp-sources/
+TAG_DIR=~/.gtags/emacs-lisp-sources/
 
 rm -rf $TAG_DIR
 mkdir -p $TAG_DIR
@@ -20,4 +20,4 @@ find . -type f -name "*.el.gz" -exec gzip -d \{\} +
 gtags --gtagslabel=ctags
 popd > /dev/null
 
-ln -sfh ~/Library/Caches/Homebrew/emacs-plus--git ~/.tags/emacs-c-sources > /dev/null
+ln -sfh ~/Library/Caches/Homebrew/emacs-plus--git ~/.gtags/emacs-c-sources > /dev/null
