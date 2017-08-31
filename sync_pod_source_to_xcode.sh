@@ -3,6 +3,7 @@
 
 if [ $# != 2 ]; then
     echo "sync_pod_source_to_xcode.sh '/path/to/lib/source_dir' '/path/to/project/Pods/lib'"
+    exit -1
 fi
 
 source_path=$1
