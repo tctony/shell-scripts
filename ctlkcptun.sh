@@ -24,7 +24,7 @@ _start() {
         exit 0
     fi
     echo "Starting kcptun server..."
-    $KCPTUN_SERVER -l ":$KCPTUN_PORT" -t "$KCPTUN_TARGET_IP:$KCPTUN_TARGET_PORT" -mode fast2
+    $KCPTUN_SERVER -l ":$KCPTUN_PORT" -t "$KCPTUN_TARGET_IP:$KCPTUN_TARGET_PORT" -mode fast2 1>/dev/null 2>&1 &
     echo $! > /var/run/kcptun.pid
     echo "kcptun started."
 }
