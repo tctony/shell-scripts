@@ -1,7 +1,7 @@
 #!/bin/sh
 
 _get_pid () {
-    cat /var/run/emacs.pid 2>/dev/null 
+    cat /var/run/emacs.pid 2>/dev/null
 }
 
 _print_status() {
@@ -31,7 +31,7 @@ _status() {
 
 _stop() {
     pid=`_get_pid`
-    if [ -z "$pid" ]; then 
+    if [ -z "$pid" ]; then
         _print_status
         exit 0
     fi
