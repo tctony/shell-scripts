@@ -12,6 +12,13 @@ _print_status() {
     fi
 }
 
+_check_pid_file() {
+    if [ ! -w /var/run/emacs.pid ]; then
+        echo "pid file(/var/run/emacs.pid) is not writable!"
+        exit 0
+    fi
+}
+
 _start() {
     pid=`_get_pid`
     if [[ ! -z "$pid" ]]; then
@@ -41,6 +48,7 @@ _stop() {
 
 case $1 in
     start)
+        _check_pid_file
         _start
     ;;
 
