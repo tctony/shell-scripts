@@ -46,6 +46,10 @@ _stop() {
     echo "Emacs stopped."
 }
 
+_clear() {
+    echo '' > /var/run/emacs.pid
+}
+
 case $1 in
     start)
         _check_pid_file
@@ -62,6 +66,10 @@ case $1 in
 
     restart)
         _stop && sleep 1 && _start
+    ;;
+
+    clear)
+        _clear
     ;;
 
     *)
