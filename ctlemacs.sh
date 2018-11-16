@@ -74,7 +74,7 @@ case $1 in
 
     *)
         _status
-        echo "Usage: ctlemacs [start|status|stop|restart]"
+        echo "Usage: ctlemacs [start|status|stop|restart|clear]"
         exit -1
     ;;
 esac
