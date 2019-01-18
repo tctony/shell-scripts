@@ -1,7 +1,9 @@
 #!/bin/sh
 
+pidfile=~/.spacemacs.d/ignore/emacs.pid
+
 _get_pid () {
-    cat /var/run/emacs.pid 2>/dev/null
+    cat $pidfile 2>/dev/null
 }
 
 _print_status() {
@@ -9,13 +11,6 @@ _print_status() {
         echo "Emacs is not running."
     else
         echo "Emacs is running with pid $1."
-    fi
-}
-
-_check_pid_file() {
-    if [ ! -w /var/run/emacs.pid ]; then
-        echo "pid file(/var/run/emacs.pid) is not writable!"
-        exit 0
     fi
 }
 
@@ -47,12 +42,11 @@ _stop() {
 }
 
 _clear() {
-    echo '' > /var/run/emacs.pid
+    echo '' > $pidfile
 }
 
 case $1 in
     start)
-        _check_pid_file
         _start
     ;;
 
