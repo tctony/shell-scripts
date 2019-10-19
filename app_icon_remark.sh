@@ -8,7 +8,7 @@ if [ -z "`which magick`" ]; then
 fi
 
 if [ "$#" != 4 ]; then
-    echo 'usage: ./app_icon_remark.sh icon.png mark_text red|lightgreen icon_remarked.png';
+    echo 'usage: ./app_icon_remark.sh icon.png mark_text red|black icon_remarked.png';
     exit -1
 fi
 
