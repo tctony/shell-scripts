@@ -1,1 +1,1 @@
-git tag -f $1 && git push origin -f $1
+git tag -f $1 && git push && git push origin -f $1
