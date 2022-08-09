@@ -13,12 +13,11 @@ _print_status() {
         echo "Emacs is running with pid $1."
     fi
 }
-
 _start() {
     pid=`_get_pid`
     if [[ ! -z "$pid" ]]; then
         _print_status $pid
-        exit 0
+        return
     fi
     echo "Starting emacs daemon..."
     pushd ~ > /dev/null
@@ -35,9 +34,9 @@ _stop() {
     pid=`_get_pid`
     if [ -z "$pid" ]; then
         _print_status
-        exit 0
+        return
     fi
-    emacsclient --eval "(kill-emacs)"
+    emacsclient --eval "(kill-emacs)" >/dev/null 2>&1
     echo "Emacs stopped."
 }
 
@@ -59,7 +58,7 @@ case $1 in
     ;;
 
     restart)
-        _stop && sleep 1 && _start
+        _stop && sleep 0.5 && _clear && sleep 0.5 && _start
     ;;
 
     clear)
