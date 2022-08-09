@@ -18,7 +18,8 @@ convert -size 1024x1024 xc:none \
        mark_bg.png
 convert -size 553x242 -background none \
         -fill white \
-        -font "/System/Library/Fonts/PingFang.ttc" \
+        -font "/Library/Fonts/Microsoft/SimHei.ttf" \
+        -pointsize 178 \
         -gravity center \
         label:"$2" \
         -rotate -45 \
