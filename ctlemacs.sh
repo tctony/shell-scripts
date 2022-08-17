@@ -24,6 +24,7 @@ _start() {
     emacs --daemon
     popd > /dev/null
     echo "Emacs started."
+    emacsclient -c &
 }
 
 _status() {
