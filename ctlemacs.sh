@@ -24,7 +24,11 @@ _start() {
     emacs --daemon
     popd > /dev/null
     echo "Emacs started."
-    emacsclient -c &
+    emacsclient -n -c
+}
+
+_new () {
+    emacsclient -n -c
 }
 
 _status() {
@@ -50,6 +54,10 @@ case $1 in
         _start
     ;;
 
+    new)
+        _new
+    ;;
+
     status)
         _status
     ;;
@@ -68,7 +76,7 @@ case $1 in
 
     *)
         _status
-        echo "Usage: ctlemacs [start|status|stop|restart|clear]"
+        echo "Usage: ctlemacs [start|new|status|stop|restart|clear]"
         exit -1
     ;;
 esac
