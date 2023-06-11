@@ -41,7 +41,7 @@ _stop() {
         _print_status
         return
     fi
-    emacsclient --eval "(kill-emacs)" >/dev/null 2>&1
+    emacsclient --eval "(kill-emacs)" --alternate-editor=nil >/dev/null 2>&1
     echo "Emacs stopped."
 }
 
